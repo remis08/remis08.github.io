@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="トラットリア ソラーレ。太陽の光を浴びた、本場イタリアの味。まるでローマの路地裏のような温かい空間で、ピザの本場、ナポリ出身シェフによる自家製パスタと薪窯焼きピザをお楽しみいただけます。ランチ、ディナー、そして特別な日のご利用をお待ちしております。">
+    <title>イタリアンレストランのサイト制作|予約ページ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mynerve&family=Nixie+One&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+      
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/vegas.css">
+    <link rel="stylesheet" href="../css/hamburgers.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="touch-icon.png">
+    
+</head>
+
+<body  id="top" class="form-page">
+    <header>
+        <h1>Vent<span>イタリアンレストラン ヴェント</span></h1>
+        <p class="tag-line">ナポリの風薫る、本場の味。</p>
+    </header>
+    <nav id="g-nav">
+        <ul>
+            <li><a href="../" data-en="TOP">トップ</a></li>
+            <li><a href="../index.html#news" data-en="NEWS">お知らせ</a></li>
+            <li><a href="../index.html#menu" data-en="MENU">メニュー</a></li>
+            <li><a href="../index.html#movie" data-en="MOVIE">動画</a></li>
+            <li><a href="../index.html#shop" data-en="SHOP">店舗情報</a></li>
+            <li><a href="../index.html#faq" data-en="FAQ">よくある質問</a></li>
+            <li><a href="#">X(旧Twitter)</a></li>
+            <li><a href="#">LINE</a></li>
+        </ul>
+    </nav>
+
+
+    <button class="hamburger hamburger--collapse" type="button" id="ham-btn">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+
+
+    <div id="main-visual"></div>
+   
+
+    <main>
+        <section  id="form" class="content">
+            <h3 data-en="reserve">予約フォーム</h3>
+            <div class="form-inner">
+                <iframe id="g-form"   src="https://docs.google.com/forms/d/e/1FAIpQLSejTZ4-QETfBCXsk1fwel-nBhp9cyZx4CArMRUAiLDcwPC7ag/viewform?embedded=true" width="640" height="1600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p><small>&copy; イタリアンレストラン ヴェント <span id="this-year"></span></small></p>
+    </footer>
+
+
+
+
+
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js></script>
+    <script src="../js/vegas.js"></script>
+    <script src="../js/script.js"></script>
+<script>//g-formにリダイレクトする
+let load = 0;
+$('#g-form').on('load',function(){
+    load++;
+    if(load > 1){
+        window.location.href ='thanks.html'; //リダイレクトさせるファイルのパスを入れる
+    }
+})
+
+</script>
+    
+
+
+
+</body>
+
+</html>
