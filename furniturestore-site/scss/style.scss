@@ -1,0 +1,516 @@
+//パーシャルファイルを呼び出す 
+//以下の命令では_reset.scssを省略してるよ（これパーシャルファイルっていうんだ）
+@use "reset";
+
+
+
+
+
+//変数の登録
+$color_1: #c8a934; //headerとcol-1
+$color_2: #eae6dd; //navとfooter
+$color_3: #1b497a; //main-text1 とcol-3-1
+$color_4: #af4f25; //main-text2 とcol-3-2
+$color_5: #05440f; //main-text3 とcol-3-3
+$text_color_1: #444;
+$text_color_2: #f4f4f4;
+$font_en: "Poppins", sans-serif;
+$point_1: 640px;
+$point_2: 900px;
+$point_3: 1280px;
+
+
+//関数の登録
+@mixin tab() {
+    @media(min-width:$point_1) {
+        @content();
+    }
+}
+
+
+@mixin pc1() {
+    @media(min-width:$point_2) {
+        @content();
+    }
+}
+
+@mixin pc2() {
+    @media(min-width:$point_3) {
+        @content();
+    }
+}
+//font-sizeの指定
+@function rem($px) {
+    @return($px / 16) * 1rem;
+}
+
+
+
+body {
+    font-family: $font_en ;
+    color: $text_color_1;
+    font-size: rem(16);
+    background-color: #fff;
+}
+
+//spファースト
+
+//header部分
+header {
+    width: 100%;
+    height: 60px;
+    background-color: $color_1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    position: fixed;
+    z-index: calc(infinity);
+
+    >h1 {
+        font-size: 38px; //28px~38pxの間でフルード
+        font-size: clamp(1.75rem, 1.466rem + 1.21vw, 2.375rem);
+
+    }
+
+    color: $text_color_2;
+
+    @include pc1() {
+        position: static; //指定したpositionを解除する
+        height: auto;
+        padding: 30px 0;
+        justify-content: center;
+    }
+
+}
+
+//ハンバーガーボタン部分
+#ham-btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #f2f2f2;
+    position: relative;
+
+
+    >span {
+        display: block;
+        content: "";
+        width: 24px;
+        height: 3px;
+        background-color: $text_color_1;
+        //positionを入れ忘れてたからhamburger部分がずれてたよ(^^♪
+        position: absolute;
+        inset: 0;
+        margin: auto;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 3px;
+            background-color: $text_color_1;
+            position: absolute;
+
+            top: -8px;
+
+
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 3px;
+            background-color: $text_color_1;
+            position: absolute;
+
+            top: 8px;
+            transition: 0.2s;
+
+        }
+    }
+
+
+    &.is-active>span {
+        background-color: transparent;
+
+
+        &::before {
+            top: 0;
+            rotate: 45deg;
+
+        }
+
+        &::after {
+            top: 0;
+            rotate: 135deg;
+
+        }
+    }
+
+    @include pc1() {
+        display: none;
+    }
+}
+
+
+//pc用ナビゲーション
+#g-nav {
+    display: none;
+
+    @include pc1() {
+        display: block;
+        width: 100%;
+        height: 50px;
+        background-color: $color_2;
+        position: sticky; //ナビゲーションがヘッダーより下にスクロールしたら固定
+        top: 0;
+        z-index: 10;
+
+        >ul {
+            display: flex;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            gap: 0 5px;
+
+            
+                a {
+                    color: $text_color_1;
+
+                    padding: 10px  ;
+                    font-size: rem(14);
+
+                    &:hover {
+                        text-decoration: underline 3px $color_1;
+                        text-underline-offset: 8px;
+
+                    }
+                }
+
+            
+
+
+
+        }
+    }
+
+
+    @include pc2(){
+        >ul{
+            gap:0 12px;
+       a{
+            padding: 10px 20px;
+            font-size: rem(18);
+        } }
+        
+    }
+}
+//スクロールした時の#g-nav
+
+body.scroll>#g-nav{
+    box-shadow: 0 3px 3px #969696;
+}
+//サブタイトル
+#sub-title {
+    font-family: $font_en;
+    height: 50px;
+    line-height: 50px;
+    font-size: rem(18);
+    position: absolute;
+    top: 0;
+    left: 30px;
+    display: none;
+    font-weight: bold;
+    color: $color_1;
+
+    @include pc2(){
+        font-size: rem(24);
+        position: absolute;
+    top: 0;
+    left: 30px;
+    }
+
+}
+
+body.scroll #sub-title {
+    display: block;
+}
+
+//sp用ナビゲーション
+#sp-nav {
+    translate: 100% 0; //横 縦
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: $color_2;
+    position: fixed;
+    z-index: 10;
+    top: 60px;
+    left: 0;
+    padding: 40px;
+
+    li {
+
+        margin-bottom: 18px;
+
+
+        a {
+            color: $text_color_1;
+            display: block;
+            padding: 6px 0;
+            border-bottom: solid 1px $text_color_1;
+
+        }
+    }
+
+    &.slide {
+        translate: 0;
+        transition: 0.3s;
+    }
+
+    @include pc1() {
+        display: none;
+
+    }
+
+}
+
+
+//共通ボタン
+.more {
+    display: block;
+    width: 70%;
+    margin: 10px auto;
+    background-color: #fff;
+    color: $text_color_1;
+    padding: 10px 20px;
+    position: relative;
+
+    &::after {
+        display: block;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid $text_color_1;
+        border-right: 2px solid $text_color_1;
+        rotate: 45deg;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 30px;
+        margin: auto;
+    }
+}
+
+main {
+    padding: 70px 10px 0px;
+
+    @include pc1() {
+        padding: 10px 10px 0;
+    }
+}
+
+//contents-wrapper部分
+.contents-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    &:nth-of-type(2)>.main-text {
+        background-color: $color_4;
+    }
+
+    &:nth-of-type(3)>.main-text {
+        background-color: $color_5;
+    }
+
+    @include pc1() {
+        flex-direction: row-reverse;
+
+        &:nth-of-type(2) {
+            flex-direction: row;
+        }
+
+        >.main-img {
+            width: calc((100% - 20px) / 3 * 2 + 10px);
+        }
+
+        >.main-text {
+            width: calc((100% - 20px) / 3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+    }
+
+}
+
+.main-img {
+    width: 100%;
+    aspect-ratio: 4/2.6;
+    margin-bottom: 10px;
+
+    >img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.main-text {
+    background-color: $color_3;
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 10px;
+    color: $text_color_2;
+
+    >h2 {
+        margin-bottom: 20px;
+        font-size: rem(23);
+
+    }
+
+    >p {
+        line-height: 1.75;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* col-1部分 */
+.col-1 {
+    background-color: $color_1;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+
+    >h2 {
+        font-size: rem(20);
+        margin-bottom: 10px;
+    }
+
+    >p {
+        line-height: 1.5;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    @include tab() {
+        padding: 50px 20px;
+
+        >h2 {
+            font-size: rem(24);
+        }
+    }
+
+    @include pc1() {
+        padding: 80px 20px;
+
+        >h2 {
+            margin-bottom: 40px;
+            line-height: 1.75;
+        }
+    }
+}
+
+/* col-3部分 */
+
+.col-3-wrapper {
+    @include pc1() {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.col-3-box {
+    margin-bottom: 10px;
+
+
+    .col-3-img {
+        width: 100%;
+        aspect-ratio: 2/1;
+
+        >img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    >.col-3-text {
+        background-color: $color_3;
+        text-align: center;
+
+        padding: 20px;
+
+
+        >h3 {
+            font-size: rem(26);
+            color: $text_color_2;
+        }
+
+        >.icon {
+            width: 70px;
+            aspect-ratio: 1/1;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 10px;
+            margin: 20px auto;
+
+        }
+    }
+
+    @include tab() {
+        display: flex;
+
+        .col-3-img {
+            width: 50%;
+            aspect-ratio: 4/3;
+        }
+
+        .col-3-text {
+            width: 50%;
+            padding-top: 40px;
+        }
+    }
+
+    @include pc1() {
+
+
+        display: block;
+        width: calc((100% - 20px) / 3);
+
+        >.col-3-img {
+            width: 100%;
+        }
+
+        >.col-3-text {
+            width: 100%;
+        }
+
+    }
+}
+
+.col-3-box:nth-of-type(2)>.col-3-text {
+    background-color: $color_4;
+}
+
+.col-3-box:nth-of-type(3)>.col-3-text {
+    background-color: $color_5;
+}
+
+
+
+
+
+footer {
+    background-color: $color_2;
+    margin: 0 10px 10px;
+
+    >p {
+        text-align: center;
+        padding: 20px 0;
+    }
+}

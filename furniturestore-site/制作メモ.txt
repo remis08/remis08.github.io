@@ -1,0 +1,27 @@
+2024/08/06
+配色のルール
+
+
+headerとcol-1  #eae6dd;
+navとfooter  #c8a934;
+main-contents1 
+main-contents2
+main-contents3
+
+#1b497a
+#af4f25
+#c8a934
+#eae6dd
+#
+～～制作ポイント～～
+
+・min-widthを使用し、モバイルファーストで作成
+・Sassのmixinなどの関数を使用し、記述量を減らしデータを圧縮した。
+・ワイヤーフレーム、カンプの作成にphotoshopを使用.それをもとにコーディングをした。
+
+
+
+2024/08/09課題
+
+もう1つメディアクエリを追加する
+footerに日付をいれる
