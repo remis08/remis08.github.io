@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+
+img {
+    max-width: 100%;
+    /* フルードイメージSTEP1 */
+    vertical-align: bottom;
+}
+
+/* 全項共通部分 */
+header {
+    padding: 40px 0;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Shippori Mincho", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 54px;
+}
+
+.g-nav {
+    width: 100%;
+    height: 50px;
+    background-color: #C73E3A;
+}
+
+.g-nav>ul {
+    display: flex;
+    max-width: 960px;
+    /* 小さくはしたいけど960pxにしたい。STEP2フルードイメージ */
+    margin: 0 auto;
+}
+
+.g-nav li {
+    width: 20%;
+
+}
+
+.g-nav a {
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    border-left: 1px solid #fff;
+}
+
+.g-nav li:last-of-type>a {
+    border-right: 1px solid #fff;
+}
+
+.g-nav a:hover {
+    background-color: #CAAD5F;
+    color: #1C1C1C;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: #C73E3A;
+
+}
+
+footer>p {
+    text-align: center;
+    color: #fff;
+    line-height: 100px;
+}
+
+main {
+    max-width: 960px;
+    /* SEP3フルードイメージ */
+    margin: 50px auto 100px;
+}
+
+/* トップページ部分 */
+
+.main-visual {
+    margin-bottom: 100px;
+
+    /* PC画面とスマホ画面でメインイメージのサイズを変化させよう！topimgをトリミングしていくよ(^_-)-☆*/
+    /* height: 300px; ←の命令のように固定するとレスポンシブでサイズ変更された時に、あんまりいいデザインじゃなくなるね、
+    以下の命令で、レスポンシブサイズに合わせて変化させるようにしてみよう */
+    aspect-ratio: 2/0.8;
+    /* 横/縦の比率 */
+}
+
+.main-visual>img {
+    /* 以下の３つの命令でimgを隠していくよ */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* 以下の命令でトリミング位置を指定していくよ */
+    object-position: center center;
+}
+
+.main-copy>h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-style: normal;
+    font-family: "Shippori Mincho", serif;
+}
+
+.main-copy>p {
+    max-width: 600px;
+    /* SEP4フルードイメージ */
+    margin: 0 auto;
+    line-height: 2;
+    font-weight: 500;
+    font-style: normal;
+    font-family: "Shippori Mincho", serif;
+}
+
+/* 季節ページ部分 */
+.wrapper {
+    display: flex;
+    gap: 0 40px;
+    flex-direction: row-reverse;
+}
+
+.text-box {
+    width: calc(100% - 62.5%);
+
+    /* 33.3%; 割り切れない場合は切り下げよう、、だがしかし gapがあるので余白を確実に計りたい。その場合calcを使ちゃお！ */
+}
+
+.img-box {
+    width: 62.5%;
+}
+
+.text-box>h2 {
+    margin: 20px 0;
+    font-size: 26px;
+
+}
+
+.text-box>p {
+    line-height: 1.75;
+
+}
+
+
+
+/* 各季節ページの部分 */
+
+.spring>.g-nav {
+    background-color: #F596AA;
+}
+
+.spring>footer {
+    background-color: #F596AA;
+}
+
+.summer>.g-nav {
+    background-color: #1B813E;
+}
+
+.summer>footer {
+    background-color: #1B813E;
+}
+
+.fall>.g-nav {
+    background-color: #E83015;
+}
+
+.fall>footer {
+    background-color: #E83015;
+}
+
+.winter>.g-nav {
+    background-color: #434343;
+}
+
+.winter>footer {
+    background-color: #434343;
+}
+
+/* カレントの指定 */
+.current>a {
+    background-color: #CAAD5F;
+}
+
+/* 960px以下 */
+@media(max-width:960px ) {
+    main {
+        padding: 0 10px;
+    }
+}
+
+/* 767px以下 */
+@media(max-width:767px) {
+
+    header{
+        padding: 28px 0 ;
+    }
+
+    h1{
+        font-size: 46px;
+    }
+    .main-visual {
+        aspect-ratio: 1/0.8;
+    }
+    .main-copy>p{
+        padding: 0 16px;
+    }
+
+    .wrapper {
+        flex-direction: column-reverse;
+        gap: 48px 0;
+        
+
+    }
+
+    .text-box {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .img-box {
+        width: 100%;
+        text-align: center;
+
+
+    }
+
+    .g-nav a{
+        font-size: 14px;
+    }
+
+
+}

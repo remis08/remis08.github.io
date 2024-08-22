@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,:after,:before{background-repeat:no-repeat;box-sizing:inherit}:after,:before{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0;box-sizing:border-box;}audio:not([controls]){display:none;height:0}hr{overflow:visible}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}summary{display:list-item}small{font-size:80%}[hidden],template{display:none}abbr[title]{border-bottom:1px dotted;text-decoration:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace,monospace}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}input{border-radius:0}[role=button],[type=button],[type=reset],[type=submit],button{cursor:pointer}[disabled]{cursor:default}[type=number]{width:auto}[type=search][type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit}optgroup{font-weight:700}button{overflow:visible}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:0;padding:0}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button:-moz-focusring{outline:1px dotted}[type=reset],[type=submit],button,html [type=button]button,select{text-transform:none}button,input,select,textarea{background-color:transparent;border-style:none;color:inherit}select::-ms-expand{display:none}select::-ms-value{color:currentColor}legend{border:0;color:inherit;display:table;max-width:100%;white-space:normal}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}[type=search]img{border-style:none;vertical-align: bottom}progress{vertical-align:baseline}svg:not(:root){overflow:hidden}audio,canvas,progress,video{display:inline-block}@media screen{[hidden~=screen]{display:inherit}[hidden~=screen]:not(:active):not(:focus):not(:target){position:absolute!important;clip:rect(0 0 0 0)!important}}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled]{cursor:default}::-moz-selection{background-color:#b3d4fc;color:#000;text-shadow:none}::selection{background-color:#b3d4fc;color:#000;text-shadow:none}ul,ol{list-style:none;}a{text-decoration:none;}img{max-width: 100%;vertical-align: bottom;}
+
+body{
+    font-family: sans-serif;
+}
+
+header{
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f19e9e;
+>h1{
+    text-align: center;
+    font-size: 24px;
+}}
+
+main{
+    padding: 24px;
+}
+
+.wrapper{
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    margin:0 auto;
+    >p{
+        width: 32%;
+        aspect-ratio: 6/7;
+        padding: 4px;
+        border: solid 1px #333  ;
+        >img{
+            object-fit: cover;
+            object-position: center bottom;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+}
+
+
+/* buttonのスニペット */
+
+.button-10 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 250px;
+    margin: 0 auto 30px;
+    padding: 1em 2em;
+    overflow: hidden;
+    border: none;
+    border-radius: 25px;
+    background-color: #d09125;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.button-10::before {
+    display: block;
+    position: absolute;
+    top: -50%;
+    left: -30%;
+    transform: rotate(30deg);
+    width: 70px;
+    height: 100px;
+    content: '';
+    background-image: linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 0)));
+    animation: animation-button-10 2s infinite linear;
+}
+
+@keyframes animation-button-10 {
+    17% {
+        left: 120%;
+    }
+    100% {
+        left: 120%;
+    }
+}
+
+.button-10:hover {
+    background-color: #c08115;
+}
+
+.gachagacha {
+    margin: 0 auto 40px;
+    width: 140px;
+}
+
+
+footer{
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f19e9e;}
