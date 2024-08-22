@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightboxの実装</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/lightbox.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Lightboxの実装</h1>
+    <div class="wrapper">
+        <div class="box">
+            <a href="img/01.jpg" data-lightbox="photo" data-title="いぬ"><img src="img/01.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="img/02.jpg" data-lightbox="photo"><img src="img/02.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="img/03.jpg" data-lightbox="photo"><img src="img/03.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="img/04.jpg" data-lightbox="photo"><img src="img/04.jpg" alt=""></a>
+        </div>
+
+
+        <!-- /.box -->
+
+
+
+    </div>
+    <!-- /.wrapper -->
+
+
+    <!--     下記の貼り付け方 
+    1)ctrl+shift+Pで検索欄を出す
+    2)cdnjpをクリックjQueryで検索。最上位に出てくる新しいバージョンをクリック。
+    3)下記のURLをスクリプトタグで貼り付ける -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+        integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+        crossorigin='anonymous'></script>
+
+    <!-- jsのリンクタグを貼り忘れてたよ！ -->
+    <script src="js/lightbox.js"></script>
+
+</body>
+
+</html>
