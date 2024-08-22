@@ -70,7 +70,12 @@ main {
 
         }
     }
+>p{
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.75;
 
+}
 }
 
 .main-visual {
@@ -90,16 +95,18 @@ main {
 //メインコピー
 .main-copy {
     padding: 50px 20px;
-    text-align: center;
-
+ 
     >h2 {
-        margin-bottom: 40px;
+        margin-bottom: 40px;   
+        text-align: center;
+
     }
 
     >.lead {
         max-width: 600px;
         font-size: 18px;
         margin-bottom: 0 auto 50px;
+        line-height: 1.75;
 
     }
 }
@@ -108,6 +115,7 @@ main {
 //課題のリスト
 .kadai-list {
     padding: 50px 0 50px 50px;
+    list-style: disc;
     >li{
         margin-bottom: 20px;
         >a{
@@ -118,6 +126,7 @@ main {
         }
     }
 }
+
 
 
 
