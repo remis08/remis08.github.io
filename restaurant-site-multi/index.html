@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="トラットリア ソラーレ。太陽の光を浴びた、本場イタリアの味。まるでローマの路地裏のような温かい空間で、ピザの本場、ナポリ出身シェフによる自家製パスタと薪窯焼きピザをお楽しみいただけます。ランチ、ディナー、そして特別な日のご利用をお待ちしております。">
+    <title>イタリアンレストランのサイト制作</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Klee+One&family=Zen+Loop:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/vegas.css">
+    <link rel="stylesheet" href="css/hamburgers.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="touch-icon.png">
+    <script>
+            //多言語用のリダイレクト
+   document.querySelector('#btn-ja').href = 'https://remis08.github.io/restaurant-site-multi';
+
+   document.querySelector('#btn-it').href = 'https://translate.google.com/translate?sl=ja&tl=it&u=https://remis08.github.io/restaurant-site';
+
+   document.querySelector('#btn-en').href = 'https://translate.google.com/translate?sl=ja&tl=en&u=https://remis08.github.io/restaurant-site';
+
+    </script>
+</head>
+
+<body id="top">
+    <header>
+        <h1>Vent<span>イタリアンレストラン ヴェント</span></h1>
+        <p class="tag-line">ナポリの風薫る、本場の味。</p>
+        <ul class="lang-btn">
+            <li><a href="https://remis08.github.io/restaurant-site-multi" id="btn-ja">日本語</a></li>
+            <li><a href="https://translate.google.com/translate?sl=ja&tl=it&u=https://remis08.github.io/restaurant-site-multi"id="btn-it">Italiano</a></li>
+            <li><a href="https://translate.google.com/translate?sl=ja&tl=en&u=https://remis08.github.io/restaurant-site-multi" id="btn-en">English</a></li>
+            
+            
+        </ul>
+    </header>
+    <nav id="g-nav">
+        <ul>
+            <li><a href="#top" data-en="TOP">トップ</a></li>
+            <li><a href="#news" data-en="NEWS">お知らせ</a></li>
+            <li><a href="#menu" data-en="MENU">メニュー</a></li>
+            <li><a href="#movie" data-en="MOVIE">動画</a></li>
+            <li><a href="#shop" data-en="SHOP">店舗情報</a></li>
+            <li><a href="#faq" data-en="FAQ">よくある質問</a></li>
+            <li><a href="#">X(旧Twitter)</a></li>
+            <li><a href="#">LINE</a></li>
+        </ul>
+    </nav>
+
+
+    <button class="hamburger hamburger--collapse" type="button" id="ham-btn">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+<a  class="to-form" href="form/">ご予約はこちらから</a>
+
+    <div id="main-visual"></div>
+    <div class="main-copy">
+        <h2>故郷の味を日本の皆様へ</h2>
+        <p class="lead">ヴェント（イタリア語で風）は、ナポリ の風 を感じられるアットホーム なイタリアン レストランです。本場の味をご堪能ください。</p>
+    </div>
+    <!-- /.main-copy -->
+
+    <div class="gallery">
+        <p><img src="img/bluebird-provisions-lRAWcT7uwhY-unsplash.jpg" alt=""></p>
+        <p><img src="img/main-01.webp" alt=""></p>
+    </div>
+
+    <main>
+        <section id="news" class="content">
+            <h3 data-en="NEWS">お知らせ</h3>
+            <dl id="news-list">
+            </dl>
+
+        </section>
+
+
+        <section id="menu" class="content">
+            <h3 data-en="MENU">メニュー</h3>
+
+
+            <div class="menu-wrapper">
+                <div class="menu-box">
+                    <a href="img/menu-01.jpg" data-lightbox="menu">
+                        <p class="menu-title">マルゲリータ</p>
+                        <p class="menu-photo"><img src="img/menu-01.jpg" alt=""></p>
+                    </a>
+                </div>
+                <!-- /.nemu-box -->
+
+
+
+                <div class="menu-box">
+
+                    <!--  data-lightboxのdataをdetaと間違えたよ！そのせいでdata-lightboxのプラグインが適用されなかった('Д') -->
+                    <a href="img/menu-02.jpg" data-lightbox="menu">
+                        <p class="menu-title">クアトロフォルマッジ</p>
+                        <p class="menu-photo"><img src="img/menu-02.jpg" alt=""></p>
+                    </a>
+                </div>
+                <!-- /.nemu-box -->
+
+
+                <div class="menu-box">
+                    <a href="img/menu-03.jpg" data-lightbox="menu">
+                        <p class="menu-title">ボンゴレ・ロッソ</p>
+                        <p class="menu-photo"><img src="img/menu-03.jpg" alt=""></p>
+                    </a>
+                </div>
+                <!-- /.nemu-box -->
+
+
+                <div class="menu-box">
+                    <a href="img/menu-04.jpg" data-lightbox="menu">
+                        <p class="menu-title">ティラミス</p>
+                        <p class="menu-photo"><img src="img/menu-04.jpg" alt=""></p>
+                    </a>
+                </div>
+                <!-- /.nemu-box -->
+
+
+
+                <div class="menu-box">
+                    <a href="img/menu-04.jpg" data-lightbox="menu">
+                        <p class="menu-title">パンナコッタ</p>
+                        <p class="menu-photo"><img src="img/menu-05.jpg" alt=""></p>
+                    </a>
+                </div>
+                <!-- /.nemu-box -->
+
+
+
+                <div class="menu-box">
+                    <a href="img/menu-04.jpg" data-lightbox="menu">
+                        <p class="menu-title">マルゲリータ</p>
+                        <p class="menu-photo"><img src="img/menu-06.jpg" alt=""></p>
+                    </a>
+                </div>
+                <!-- /.nemu-box -->
+            </div>
+            <!-- /.menu-wrapper -->
+        </section>
+
+
+
+
+        <div class="parallax">
+
+        </div><!-- /.parallax -->
+
+
+
+
+
+
+
+
+
+
+
+        <section id="movie" class="content">
+            <h3 data-en="MOVIE">動画</h3>
+            <div class="movie-inner"><!-- 幅と高さのみ削除 -->
+                <iframe src="https://www.youtube.com/embed/7toSikYGFNM?si=vSNVbseix9ZgjKot" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <!-- /.movie-inner -->
+        </section>
+
+        <section id="shop" class="content">
+            <h3 data-en="SHOP">店舗情報</h3>
+            <div class="shop-container">
+                <div class="g-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12956.046585094777!2d139.7138955!3d35.7259321!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6b8b0de7dd%3A0xd184e022fc8bf0e6!2z5qCq5byP5Lya56S-44OV44Kh44Km44Oz44OH44O844K344On44Oz44OV44Kn44Oq44KrVEE!5e0!3m2!1sja!2sjp!4v1722240757931!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="shop-wrapper">
+                    <dl>
+                        <dt>住所</dt>
+                        <dd>東京都豊島区南池袋1-2-x</dd>
+                        <dt>電話番号</dt>
+                        <dd><a class="tel" href="tel:03-3333-xxxx">03-3333-xxxx</a></dd>
+
+                        <!-- mailtoを使うと、アドレスを悪用されやすいから気をつけよう -->
+                        <dt>メールアドレス</dt>
+                        <dd><a href="mailto:example@email.com">example@email.com</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>営業時間</dt>
+                        <dd>11:00~22:00</dd>
+                        <dt>定休日</dt>
+                        <dd>年末年始</dd>
+                        <dt>席数</dt>
+                        <dd>70席</dd>
+                    </dl>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="faq" class="content">
+            <h3 data-en="FAQ">よくある質問</h3>
+            <details open name="faq"> <!-- 1問目だけ答えが見えるようにopenって命令を入れておくよ -->
+                <summary data-question="Q">予約はできますか？</summary>
+                <p class="answer" deta-answer="A."> はい、ご予約いただけます。特に週末や祝日は混み合うことが予想されますので、ご予約をおすすめいたします。お電話またはインターネットからご予約いただけます。</p>
+            </details>
+
+            <details name="faq">
+                <summary data-question="Q">予約のキャンセルはできますか？</summary>
+                <p class="answer" deta-answer="A.">はい、キャンセルは可能です。ただし、当日キャンセルや無断キャンセルはキャンセル料を請求する場合がございます。</p>
+            </details>
+
+            <details name="faq">
+                <summary data-question="Q"> メニューはどのくらいの頻度で変わりますか？
+                </summary>
+                <p class="answer" deta-answer="A.">季節の食材を取り入れたメニューを常にご提供するため、メニューは随時変更しております。定番メニューはもちろん、期間限定のスペシャルメニューもご用意しておりますので、何度お越しいただいても飽きずに楽しんでいただけます。</p>
+            </details>
+
+            <details name="faq">
+                <summary data-question="Q">貸切はできますか？</summary>
+                <p class="answer" deta-answer="A.">はい、貸切も可能です。ご人数やご利用日時など、お気軽にお問い合わせください。</p>
+            </details>
+        </section>
+        <div class="carousel">
+            <ul class="bxslider">
+                <li><img src="img/menu-01.jpg" alt=""></li>
+                <li><img src="img/menu-02.jpg" alt=""></li>
+                <li><img src="img/menu-03.jpg" alt=""></li>
+                <li><img src="img/menu-04.jpg" alt=""></li>
+                <li><img src="img/main-01.webp" alt=""></li>
+                <li><img src="img/main-02.webp" alt=""></li>
+                <li><img src="img/main-03.webp" alt=""></li>
+                <li><img src="img/bluebird-provisions-lRAWcT7uwhY-unsplash.jpg" alt=""></li>
+            </ul>
+        </div>
+        <!-- /.carousel -->
+    </main>
+
+    <footer>
+        <p>
+            <small>
+                &copy; <span id="this-year"></span>イタリアンレストラン ヴェント 
+            </small>
+        </p>
+    </footer>
+
+   
+
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+    <script src="js/vegas.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+
+
+</body>
+
+</html>
